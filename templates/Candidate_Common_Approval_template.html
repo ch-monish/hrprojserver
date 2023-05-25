@@ -1,0 +1,105 @@
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+{% if Status == 'HR Shortlisted' %}
+  Dear {{hiringmanager}}
+{% elif Status == 'HM Candidate Approved' %}
+  Dear {{businessheadname}}
+{% elif Status == 'BH Candidate Approved' %}
+  Dear {{financecontrollername}}
+{% elif Status == 'FC Approved' %}
+  Dear {{generalmanager}}
+{% endif %}
+  
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+{% if Status == 'HR Shortlisted' %}
+  Candidate {{CandidateCode}} has been shortlisted in HR round of interview and pending in your Candidate approval queue.
+{% elif Status == 'HM Candidate Approved' %}
+  Candidate {{CandidateCode}} has been approved by hiring manager and pending in your Candidate Approval queue.
+{% elif Status == 'BH Candidate Approved' %}
+  Candidate {{CandidateCode}} has been approved by business unit head and pending in your Candidate Approval queue.
+{% elif Status == 'FC Approved' %}
+  Candidate {{CandidateCode}} has been approved by finance controller and pending in your Candidate Approval queue.
+{% endif %}
+  
+</p> 
+<p style="font-size: 0.9rem; font-weight: bold; font-family: Calibri;">
+  Comments:   
+</p> 
+  {% for r in approvalComments %}
+      
+  <p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">{{r}}</p>
+  
+  {% endfor %} 
+<table width='70%' style='border:1px solid black;border-collapse:collapse;font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Candidate Name</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.candidatefullname}}</td>
+  </tr> 
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Overall Experience</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.overallexperience}}</td>
+  </tr>
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Business Unit</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.jobpost.businessunit_name}} </td>
+  </tr>  
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Service Line</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.jobpost.serviceline_name}}</td>
+  </tr>
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Expected Date Of Joining</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.expectedDOJformated}}</td>
+  </tr> 
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Current Salary</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.currentCTCformated}}</td>
+  </tr>
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Expected Salary</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.expectedCTCformated}}</td>
+  </tr>    
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Negotiated Salary</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.negotiatedCTCformated}}</td>
+  </tr>
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Average salary range CTC</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.avgapprovedCTCformated}}</td>
+  </tr>  
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Bill rate in $</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.avgbillrateformated}}</td>
+  </tr> 
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Customer</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.jobpost.customer_name}}</td>
+  </tr>  
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>PO/Opportunity Ref</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.jobpost.POReference}}</td>
+  </tr> 
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Location</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.CanJobLocation}}</td>
+  </tr>  
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Employment Type</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{candidate.CanEmploymentType}}</td>
+  </tr> 
+</table>
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;"> 
+  Please approve/reject the candidate using below HR Workflow application url.
+</p>
+
+<p style="font-size: 0.9rem; font-weight: lighter; font-family:Calibri;">
+ <a href="{{ url}}">{{ url }}</a>.
+</p>
+{% endblock %}

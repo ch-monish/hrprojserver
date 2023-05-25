@@ -1,0 +1,21 @@
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear {{generalmanager}}
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;">
+  Candidate {{CandidateCode}} has been pending in your Candidate Approval queue.
+</p> 
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;"> 
+  Please approve/reject the candidate using below HR Workflow application url.
+</p>
+
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Verdana, Geneva, sans-serif;">
+ <a href="{{ url}}">{{ url }}</a>.
+</p>
+{% endblock %}

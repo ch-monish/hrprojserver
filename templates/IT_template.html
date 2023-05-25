@@ -1,0 +1,41 @@
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear ITSG Team,
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+  Please arrange laptop for the below candidate.
+</p> 
+<table>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Name</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{CanName}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Employee ID</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{CanEmployeeID}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>HRC ID</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{CanHRCID}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Date Of Joining</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{startdate}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Email</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{canofficialmailId}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Contact Number</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{CanContactNumber}}</td>
+  </tr>
+ </table> 
+
+{% endblock %}

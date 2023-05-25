@@ -1,0 +1,23 @@
+
+
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear {{Candidatename}}
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+  Our HR team found some of the discrepancies in the documents provided by you.
+</p> 
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">  
+   Please check the comments and re-upload the necessary documents ASAP by using below HR Workflow application url.
+</p> 
+
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+ <a href="{{ url}}">{{ url }}</a>.
+</p>
+{% endblock %}

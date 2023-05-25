@@ -1,0 +1,28 @@
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 1.1rem; font-weight: bold; font-family: Calibri;">
+  Congratulations {{candidatename}}, and Welcome to Belcan India!! Your first step to a successful career!!
+</p> 
+<p style="font-size: 1.3rem; font-weight: bold; font-family: Calibri;"> 
+  Your date of joining with Belcan is {{dateofjoining}}.
+</p>
+
+<p style="font-size: 1rem; font-weight: lighter; font-family: Calibri;"> 
+  Please login to the portal with below credentials and update all your details requested along with a signed copy of the offer as your acceptance for the same, within one week from today.
+</p>
+
+<p style="font-size: 1.1rem; font-weight: bold; font-family: Calibri;">
+ <a href="{{ url}}">{{ url }}</a>.
+</p>
+<p style="font-size: 1.1rem; font-weight: bold; font-family: Calibri;">
+  User Name : {{username}} <br>
+  Password  : {{password}}
+</p>
+{% endblock %}

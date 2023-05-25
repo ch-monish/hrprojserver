@@ -1,0 +1,72 @@
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear All,
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+  Job Post with {{jobcode}}  has been cancelled  by {{hiringmanager}}.
+</p>
+<p style="font-size: 0.9rem; font-weight: bold; font-family: Calibri;">
+  Comments:   
+</p> 
+  {% for r in cancelComments %}
+      
+  <p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">{{r}}</p>
+  
+  {% endfor %} 
+
+<table width='70%' style='border:1px solid black;border-collapse:collapse;font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Job Code#</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{jobdetails.JobCode}}</td>
+  </tr> 
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Title</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{jobdetails.JobTitle}}</td>
+  </tr>
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Description</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>
+      {% for r in jobdesc %}
+      
+      <p>{{r}}</p>
+      
+      {% endfor %}</td>
+  </tr>  
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Company</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{jobdetails.company_name}}</td>
+  </tr>
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Business Unit</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{jobdetails.businessunit_name}}</td>
+  </tr> 
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Service Line</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{jobdetails.serviceline_name}}</td>
+  </tr>
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Industry</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{jobdetails.industry_name}}</td>
+  </tr>    
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Customer</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{jobdetails.customer_name}}</td>
+  </tr>
+  <tr style='background-color: #dddddd;'>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Experience Range</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{jobdetails.experiencerange}}</td>
+  </tr>  
+  <tr>
+    <th width='30%' style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>Expected Onboarding Date</th>
+    <td width='70%'style='border:1px solid black; text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>{{onboardingdate}}</td>
+  </tr> 
+</table> 
+
+
+{% endblock %}

@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html>
+<style>
+table, th, td {
+  border:1px solid black;
+  border-collapse:collapse;
+  font-size: 0.9rem;
+   font-weight: bold;
+    font-family: Calibri;
+}
+</style>
+<p style="font-size: 0.9rem; font-weight: bold; font-family: Calibri;">
+{% block subject %}
+Dear Team
+{% endblock %}
+</p>
+{% block body %}
+
+<p style="font-size: 0.9rem; font-weight: bold; font-family: Calibri;">
+
+  Please initiate insurance policy for below newly joined employee.
+
+  </p>
+
+<!-- <h2>Family details for insurance</h2> -->
+
+<table style="width:100%">
+  <thead>
+      <tr style="background-color: #F3C59C;">
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Full Name(As per Aadhar)</th>
+        
+        <th>Band</th>
+        <th>GMC coverage(INR)</th>
+        <th>GPA coverage(INR)</th>
+        <th>DOJ</th>
+        <th>Official Mail ID</th>
+        <th>Personal Mail ID</th>
+        <th>Contact Number</th>
+
+      </tr>
+      <!--empid candfirstname lastname name asperaadharcard -->
+  </thead>
+    <tr>
+    <td>{{EmployeeID}}</td>
+    <td>{{canfirstName}}</td>
+    <td>{{canlastName}}</td>
+    <td>{{Candidatename}}</td>
+    
+    <td>{{Band}}</td>
+    <td>{{GMCcoverage}}</td>
+    <td>{{GPAcoverage}}</td>
+    <td>{{DOJ}}</td>
+    <td>{{OfficialMailID}}</td>
+    <td>{{PersonalMailID}}</td>
+    <td>{{ContactNumber}}</td>
+
+</tr> 
+      
+    </table>
+
+    <p style="font-size: 0.9rem; font-weight: bold; font-family: Calibri; margin-bottom: 2px; padding-bottom: 0; color: #222;">
+      Thanks,
+    </p>
+    <p style="font-size: 0.9rem; font-weight: bold; font-family: Calibri; margin: 0 0 2px 0; padding: 0; color: #222;">
+      HR Team
+    </p>    
+
+</html>
+{% endblock %}

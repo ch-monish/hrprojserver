@@ -1,0 +1,29 @@
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear Team,
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+  Please initiate medical & drug tests for below  candidate
+</p> 
+<table>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Name</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{canname}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Email</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{canemail}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Phone No</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{canphoneno}}</td>
+  </tr>
+</table>
+
+{% endblock %}

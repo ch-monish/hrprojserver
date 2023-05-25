@@ -1,0 +1,64 @@
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear HR Team,
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+  Please create an account for below candidate.
+</p> 
+<table>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>First Name</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{Canfirstname}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Last Name</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{Canlastname}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Gender</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{Gender}}</td>
+  </tr>
+
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Start Date</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{startdate}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Title</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{Title}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Manager</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{Managername}}</td>
+  </tr>
+
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Manager Email</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{Managermail}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Rate</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{AvgBillRate}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Group Supporting</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{GroupSupporting}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>Locality</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{joblocation}}</td>
+  </tr>
+  <tr>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'><b>HBU</b></td>
+    <td style='text-align: left;padding: 8px; font-size: 0.9rem; font-weight: bold;  font-family: Calibri;'>    : {{HBU}}</td>
+  </tr>
+</table>
+
+
+{% endblock %}

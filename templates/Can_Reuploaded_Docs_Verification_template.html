@@ -1,0 +1,23 @@
+
+
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear {{HRname}}
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+  Candidate <b>{{Candidatename}}</b> uploaded the documents with repect to the discrepancy while verification.
+</p> 
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">  
+   Please verify the documents and notify the candidate if you find any other discrepancy, by using below HR Workflow application url.
+</p> 
+
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+ <a href="{{ url}}">{{ url }}</a>.
+</p>
+{% endblock %}

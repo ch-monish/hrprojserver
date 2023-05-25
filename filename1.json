@@ -1,0 +1,45 @@
+
+[
+{
+    "model": "Qualification.qualification",
+    "fields": {
+        "Qualification": "SSC",
+        "Active": true
+    }
+},
+{
+    "model": "Qualification.qualification",
+    "fields": {
+        "Qualification": "Intermediate(+2)",
+        "Active": true
+    }
+},
+{
+    "model": "Qualification.qualification",
+    "fields": {
+        "Qualification": "Diploma",
+        "Active": true
+    }
+},
+{
+    "model": "Qualification.qualification",
+    "fields": {
+        "Qualification": "Bachelor's Degree",
+        "Active": true
+    }
+},
+{
+    "model": "Qualification.qualification",
+    "fields": {
+        "Qualification": "Master's Degree",
+        "Active": true
+    }
+},
+{
+    "model": "Qualification.qualification",
+    "fields": {
+        "Qualification": "Phd",
+        "Active": true
+    }
+}
+]

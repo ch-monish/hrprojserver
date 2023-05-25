@@ -1,0 +1,26 @@
+
+
+
+{% extends 'email_base.html' %}
+
+{% block title %}
+{% endblock %}
+
+{% block subject %}
+  Dear {{HRname}},
+{% endblock %}
+
+{% block body %}
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+  Candidate {{CandidateCode}} has updated PF details. 
+</p> 
+
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">  
+    Please check by using below HR Workflow application url.
+</p> 
+
+<p style="font-size: 0.9rem; font-weight: lighter; font-family: Calibri;">
+<a href="{{ url}}">{{ url }}</a>.
+</p>
+
+{% endblock %}
